@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width-device-width,initial-scale-1.0" />
     <link rel="stylesheet" href="Test3.css">
+    <link rel="stylesheet" href="transportion.css">
     <!-- Bootstrap CSS (assuming you've already included it) -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -41,5 +42,60 @@
         </form>
     </header>
 
+    <div class="login-form-container">
+        <div class="card">
+            <div class="card-front">
+                <i class="fa-solid fa-xmark" id="form-close"></i>
+                <form action="">
+                    <h3>Login</h3>
+                    <input type="email" class="box" placeholder="Enter your email" />
+                    <input type="password" class="box" placeholder="Enter your password" />
+                    <input type="submit" class="submit-btn" value="Login now" />
+                    <input type="checkbox" id="remember" /><span>Remember Me</span>
+                    <p>Forget password?  <a href="#">Click here</a></p>
+
+                </form>
+                <p>I'm New Here.  <a href="#" onclick="openRegister()">Click here</a></p>
+            </div>
+            <div class="card-back">
+                <i class="fa-solid fa-xmark" id="form-close"></i>
+                <form action="">
+                    <h3>Register</h3>
+                    <input type="text" class="box" placeholder="ID Name" />
+                    <input type="email" class="box" placeholder="Enter your email" />
+                    <input type="password" class="box" placeholder="Enter your password" />
+                    <input type="submit" class="register-btn" value="Register now" />
+
+                </form>
+                <p>I've An Account.  <a href="#" onclick="openLogin()">Click here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="MONORAIL_Menu">
+        <div class="img_Monorail">
+            <img src="Line_Monorail_Map.png" />
+        </div>
+        <div class="table-show">
+            <div class="table-show-content">
+                <ul>
+                    <li><a href="MRT_Bus.html" class="table-cell">KL Sentral</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Tun Sambanthan</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Maharajalela</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Hang Tuah</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Imbi</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Bukit Bintang</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Raja Chulan</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Bukit Nanas</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Medan Tuanku</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Chow Kit</a></li>
+                    <li><a href="MRT_Bus.html" class="table-cell">Titiwangsa</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Test3.js"></script>
 </body>
 </html>

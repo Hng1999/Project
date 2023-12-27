@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width-device-width,initial-scale-1.0" />
     <link rel="stylesheet" href="Test3.css">
+    <link rel="stylesheet" href="transportion.css">
     <!-- Bootstrap CSS (assuming you've already included it) -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -41,5 +42,65 @@
         </form>
     </header>
 
+    <div class="login-form-container">
+        <div class="card">
+            <div class="card-front">
+                <i class="fa-solid fa-xmark" id="form-close"></i>
+                <form action="">
+                    <h3>Login</h3>
+                    <input type="email" class="box" placeholder="Enter your email" />
+                    <input type="password" class="box" placeholder="Enter your password" />
+                    <input type="submit" class="submit-btn" value="Login now" />
+                    <input type="checkbox" id="remember" /><span>Remember Me</span>
+                    <p>Forget password?  <a href="#">Click here</a></p>
+
+                </form>
+                <p>I'm New Here.  <a href="#" onclick="openRegister()">Click here</a></p>
+            </div>
+            <div class="card-back">
+                <i class="fa-solid fa-xmark" id="form-close"></i>
+                <form action="">
+                    <h3>Register</h3>
+                    <input type="text" class="box" placeholder="ID Name" />
+                    <input type="email" class="box" placeholder="Enter your email" />
+                    <input type="password" class="box" placeholder="Enter your password" />
+                    <input type="submit" class="register-btn" value="Register now" />
+
+                </form>
+                <p>I've An Account.  <a href="#" onclick="openLogin()">Click here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="KTM_Menu">
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="table-dropdown">
+                    <div class="table-row">
+                        <a href="MRT_Bus.html" class="table-cell">Kwasa Damansara</a>
+                        <a href="MRT_Bus.html" class="table-cell">Kampung Selamat</a>
+                        <a href="MRT_Bus.html" class="table-cell">Sungai Buloh</a>
+                        <a href="MRT_Bus.html" class="table-cell">Damansara Damai</a>
+                        <a href="MRT_Bus.html" class="table-cell">Sri Damansara Barat</a>
+                        <a href="MRT_Bus.html" class="table-cell">Sri Damansara Sentral</a>
+                        <a href="MRT_Bus.html" class="table-cell">Sri Damansara Timur</a>
+                    </div>
+                    <div class="table-row">
+                        <a href="MRT_Bus.html" class="table-cell">Raja Uda</a>
+                        <a href="MRT_Bus.html" class="table-cell">Ampang Park</a>
+                        <a href="MRT_Bus.html" class="table-cell">Persiaran KLCC</a>
+                        <a href="MRT_Bus.html" class="table-cell">Conlay</a>
+                        <a href="MRT_Bus.html" class="table-cell">Tun Razak Exchange(TRX)</a>
+                        <a href="MRT_Bus.html" class="table-cell">Chan Sow Lin</a>
+                        <a href="MRT_Bus.html" class="table-cell">Kuchai</a>
+                    </div>
+                    <!-- Add more rows as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Test3.js"></script>
 </body>
 </html>

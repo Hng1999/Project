@@ -1,3 +1,93 @@
 ﻿body
 {
 }
+.MRT_Menu {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 9%;
+}
+
+.LRT_Menu {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 9%;
+}
+
+.KTM_Menu {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 9%;
+}
+
+.MONORAIL_Menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 9%;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Table-like structure */
+.table-dropdown {
+    display: table;
+    width: 100%;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+}
+
+    /* Change color of dropdown links on hover */
+    .table-cell:hover {
+        background-color: #f1f1f1;
+    }
+.table-show {
+    align-items: center;
+    justify-content: center;
+    padding:25px;
+}
+
+.table-show-content {
+}
+
+img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.img_Monorail {
+    width: 50%;
+    height: 50%;
+}
