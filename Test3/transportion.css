@@ -2,7 +2,6 @@
 {
 }
 .MRT_Menu {
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +9,6 @@
 }
 
 .LRT_Menu {
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +16,6 @@
 }
 
 .KTM_Menu {
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
