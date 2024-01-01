@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width-device-width,initial-scale-1.0" />
-    <link rel="stylesheet" href="Test3.css">
+    <link rel="stylesheet" href="timetable1.css">
     <!-- Bootstrap CSS (assuming you've already included it) -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -68,97 +68,71 @@
             </div>
         </div>
     </div>
-
     <div class="container">
-        <div class="featured-post">
-            <h1>Title of a longer featured blog post</h1>
-            <p class="lead">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead"><a href="#" class="read-more">Continue reading...</a></p>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <strong>World</strong>
-                        <h3>Service News</h3>
-                        <div class="date">Nov 12</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
-                    </div>
-                    <!-- Image placeholder -->
-                    <div class="image-placeholder"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <strong>Design</strong>
-                        <h3>Route Information</h3>
-                        <div class="date">Nov 11</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
-                    </div>
-                    <!-- Image placeholder -->
-                    <div class="image-placeholder"></div>
-                </div>
-            </div>
+        <h1>LRT FEEDER BUS</h1>
+        <div class="bus-buttons">
+            <button onclick="showRoutes('type1')">RapidKL Bus</button>
+            <button onclick="showRoutes('type2')">MRT Kajang Feeder Bus</button>
+            <button onclick="showRoutes('type3')">MRT Putrajaya Feeder Bus</button>
+            <button onclick="showRoutes('type4')">GoKL Bus</button>
+            <button onclick="showRoutes('type5')">Smart Selangor Bus</button>
         </div>
     </div>
-    <div class="status-container"><!--Train Status & Bus Status-->
-        <a href="tstatus.php"><h4>Train Status</h4></a>
-        <?php
-        $mysql = mysqli_connect("localhost", "root", "");
-        mysqli_select_db($mysql, 'websitedb');
-    
-        // Check connection
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
-        }
-    
-        // SQL query to fetch train status data
-        $sql = "SELECT * FROM train_status";
-        $result = mysqli_query($mysql, $sql);
-        ?>
-    </div>
-    <div class="container-nav" id="transport">
-        <ul class="nav nav-pills nav-justified">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#featured">Train</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#popular">Bus</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
-            </li>
-        </ul>
 
-        <div class="tab-content">
-            <div class="tab-pane fade show active" id="featured">
-                <ul class="transport-links">
-                    <li><a href="MRT.html">MRT</a></li>
-                    <li><a href="LRT.html">LRT</a></li>
-                    <li><a href="KTM.html">KTM</a></li>
-                    <li><a href="MONORAIL.html">MONORAIL</a></li>
-                </ul>
-            </div>
-            <div class="tab-pane fade" id="popular">
-                <ul class="transport-links">
+    <div class="container" id="routesContainer" style="display: none;">
+        <h1>Bus Routes</h1>
+        <div id="routeButtons"></div>
+    </div>
+   
+    <div class="container" id="routesContainer" style="display: none;">
+    <h1>Bus Routes</h1>
+    <div id="routeButtons"></div>
+</div>
+
+<div class="container" id="scheduleContainer" style="display: none;">
+    <h1>Bus Schedule</h1>
+    <div id="schedule"></div>
+    <script src="LRT_BUS.js"></script>
+</div>
+
+<div class="container-nav" id="transport">
+    <ul class="nav nav-pills nav-justified">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#featured">Train</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#popular">Bus</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="featured">
+            <ul class="transport-links">
+                <li><a href="MRT.html">MRT</a></li>
+                <li><a href="LRT.html">LRT</a></li>
+                <li><a href="KTM.html">KTM</a></li>
+                <li><a href="MONORAIL.html">MONORAIL</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="popular">
+        <ul class="transport-links">
                     <li><a href="MRT_Bus.php"><h4>MRT FEEDER BUS</h4></a></li>
                     <li><a href="LRT_Bus.php"><h4>LRT FEEDER BUS</h4></a></li>
                     <li><a href="RAPIDKL_Bus.php"><h4>RAPIDKL BUS</h4></a></li>
                     <li><a href="GOKL_BUS.php"><h4>GOKL BUS</h4></a></li>
                     <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>
                 </ul>
-            </div>
-            <div class="tab-pane fade" id="latest">
-                <h4>Latest News</h4>
-                <p>This is the content for the Latest News tab.</p>
-            </div>
+        </div>
+        <div class="tab-pane fade" id="latest">
+            <h4>Latest News</h4>
+            <p>This is the content for the Latest News tab.</p>
         </div>
     </div>
-    <!--Complain And Suggestion-->
-    <script src="Test3.js"></script>
+</div>
+
+<script src="Test3.js"></script>
 </body>
 </html>

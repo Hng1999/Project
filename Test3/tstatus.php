@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -68,59 +68,79 @@
             </div>
         </div>
     </div>
+<div class="tstatus-container">    
+<?php
+    $mysql = mysqli_connect("localhost", "root", "");
+    mysqli_select_db($mysql, 'websitedb');
 
-    <div class="container">
-        <div class="featured-post">
-            <h1>Title of a longer featured blog post</h1>
-            <p class="lead">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead"><a href="#" class="read-more">Continue reading...</a></p>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <strong>World</strong>
-                        <h3>Service News</h3>
-                        <div class="date">Nov 12</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
-                    </div>
-                    <!-- Image placeholder -->
-                    <div class="image-placeholder"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <strong>Design</strong>
-                        <h3>Route Information</h3>
-                        <div class="date">Nov 11</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
-                    </div>
-                    <!-- Image placeholder -->
-                    <div class="image-placeholder"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="status-container"><!--Train Status & Bus Status-->
-        <a href="tstatus.php"><h4>Train Status</h4></a>
-        <?php
-        $mysql = mysqli_connect("localhost", "root", "");
-        mysqli_select_db($mysql, 'websitedb');
-    
-        // Check connection
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
+    // Check connection
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit();
+    }
+
+    // SQL query to fetch train status data
+    $sql = "SELECT * FROM train_status";
+    $result = mysqli_query($mysql, $sql);
+?>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Status</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
         }
-    
-        // SQL query to fetch train status data
-        $sql = "SELECT * FROM train_status";
-        $result = mysqli_query($mysql, $sql);
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Train Status</h2>
+    <table>
+        <tr>
+            <th>Train ID</th>
+            <th>Train Name</th>
+            <th>Frequency</th>
+            <th>Status</th>
+        </tr>
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                        <td>{$row['train_id']}</td>
+                        <td>{$row['train_name']}</td>
+                        <td>{$row['frequency']}</td>
+                        <td>{$row['status']}</td>
+                      </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No train data available</td></tr>";
+        }
         ?>
-    </div>
+    </table>
+
+</body>
+</html>
+
+<?php
+// Close the database connection
+mysqli_close($mysql);
+?>
+    <div><!--Train Status & Bus Status--></div>
     <div class="container-nav" id="transport">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
