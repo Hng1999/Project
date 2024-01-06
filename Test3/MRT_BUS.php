@@ -21,7 +21,7 @@
         <div class="header-nav">
             <a href="#" class="logo"><span>EXPRESS</span>TIME</a>
             <nav class="navbar">
-                <a href="#home">HOME</a>
+                <a href="Test3.php">HOME</a>HOME</a>
                 <a href="#home">LATEST NEWS</a>
                 <a href="#transport">BUS</a>
                 <a href="#transport">TRAIN</a>
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="container">
-        <h1>MRT FFEDER BUS</h1>
+        <h1>MRT FEEDER BUS</h1>
         <div class="bus-buttons">
             <button onclick="showRoutes('type1')">RapidKL Bus</button>
             <button onclick="showRoutes('type2')">MRT Kajang Feeder Bus</button>
