@@ -21,7 +21,7 @@
         <div class="header-nav">
             <a href="#" class="logo"><span>EXPRESS</span>TIME</a>
             <nav class="navbar">
-                <a href="Test3.php">HOME</a>HOME</a>
+                <a href="Test3.html">HOME</a>
                 <a href="#home">LATEST NEWS</a>
                 <a href="#transport">BUS</a>
                 <a href="#transport">TRAIN</a>
@@ -43,7 +43,7 @@
         <div class="card">
             <div class="card-front">
                 <i class="fa-solid fa-xmark" id="form-close"></i>
-                <form action="">
+                <form action="login.php" method="POST">
                     <h3>Login</h3>
                     <input type="email" class="box" placeholder="Enter your email" />
                     <input type="password" class="box" placeholder="Enter your password" />
@@ -56,7 +56,7 @@
             </div>
             <div class="card-back">
                 <i class="fa-solid fa-xmark" id="form-close"></i>
-                <form action="">
+                <form action="register.php" method="POST">
                     <h3>Register</h3>
                     <input type="text" class="box" placeholder="ID Name" />
                     <input type="email" class="box" placeholder="Enter your email" />
@@ -145,8 +145,8 @@
             </div>
             <div class="tab-pane fade" id="popular">
                 <ul class="transport-links">
-                    <li><a href="MRT_Bus.php"><h4>MRT FEEDER BUS</h4></a></li>
-                    <li><a href="LRT_Bus.php"><h4>LRT FEEDER BUS</h4></a></li>
+                    <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
+                    <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
                     <li><a href="RAPIDKL_Bus.php"><h4>RAPIDKL BUS</h4></a></li>
                     <li><a href="GOKL_BUS.php"><h4>GOKL BUS</h4></a></li>
                     <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>

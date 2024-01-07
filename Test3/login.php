@@ -1,32 +1,40 @@
 <?php
-session_start(); // Start session management
-require_once('config.php'); // Include configuration settings for database connection and password hashing/salting functions
 
-// Check if user is already logged in (i.e., session variable exists)
-if (isset($_SESSION['user_id'])) { // Redirect to homepage or dashboard if user is already logged in
-    header('Location: index.php'); // Exit script execution
-    exit;
+$mysql = mysqli_connect("localhost", "root", "");
+
+if (!$mysql) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+mysqli_select_db($mysql, 'websitedb');
 
-// Get login credentials from request body or form submission (e.g., via POST method)
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL); // Sanitize email address to prevent XSS attacks
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING); // Sanitize password to prevent SQL injection attacks and XSS attacks by encoding special characters like < and > using htmlspecialchars() function before storing it in database 
-$password = htmlspecialchars($password); // Store hashed and salted password in database 
-$hashed_password = password_hash($password . SECRET_SALT, PASSWORD_BCRYPT); // Combine password with a secret salt value before hashing it with bcrypt algorithm for better security 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?"); // Prepare SQL statement to select user information based on email address 
-$stmt->execute([$email]); // Execute SQL statement with email address as parameter 
-$user = $stmt->fetch(); // Fetch user information from database 
-if ($user === false) { // Handle case where email address is not found in database 
-    http_response_code(401); // Set HTTP status code for unauthorized access 
-    echo 'Invalid email address or password'; // Display error message to user 
-    exit; // Exit script execution 
-} elseif (!password_verify($hashed_password, $user['password'])) { // Handle case where password is incorrect 
-    http_response_code(401); // Set HTTP status code for unauthorized access 
-    echo 'Invalid email address or password'; // Display error message to user 
-    exit; // Exit script execution 
-} else { // User is authenticated, set session variables and redirect them to homepage or dashboard 
-    $_SESSION['user_id'] = $user['user_id']; // Store user ID in session variable 
-    header('Location: index.php'); // Redirect user to homepage or dashboard using HTTP header location 
-    exit; // Exit script execution 
-} 
-?> 
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get user input
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    // Query to check if the user exists
+    $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
+    
+    // Execute the query
+    $result = mysqli_query($connection, $query);
+
+    // Check if the query was successful
+    if ($result) {
+        // Check if the user exists
+        if (mysqli_num_rows($result) == 1) {
+            // User exists, display success message
+            echo "<script>alert('You have successfully logged in.');</script>";
+        } else {
+            // User does not exist or incorrect credentials, display error message
+            echo "<script>alert('Incorrect username or password. Please try again.');</script>";
+        }
+    } else {
+        // Query failed, display error message
+        echo "<script>alert('Error in executing the query.');</script>";
+    }
+
+    // Close the database connection
+    mysqli_close($connection);
+}
+?>

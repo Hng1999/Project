@@ -82,6 +82,11 @@
     justify-content: center;
     background-image: linear-gradient(rgba(4,3,30,0.7),rgba(4,3,30,0.7)),url(Front_Malaysia_Img.jpg);
 }
+.login-form-container input[type="email"],
+.login-form-container input[type="password"] {
+    color: black;
+    }
+
 
     .login-form-container.active {
         visibility:visible;

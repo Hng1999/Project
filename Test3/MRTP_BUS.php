@@ -69,9 +69,9 @@
         </div>
     </div>
     <div class="container">
-        <h1>RAPIDKL BUS</h1>
+        <h1>MRT PUTRAJAYA FEEDER BUS</h1>
         <div class="bus-buttons">
-            <button onclick="showRoutes('type1')">RapidKL Bus</button>
+            <button onclick="showRoutes('type3')">MRT Putrajaya Feeder Bus</button>
         </div>
     </div>
 
@@ -88,7 +88,7 @@
 <div class="container" id="scheduleContainer" style="display: none;">
     <h1>Bus Schedule</h1>
     <div id="schedule"></div>
-    <script src="RAPIDKL_BUS.js"></script>
+    <script src="MRTP_BUS.js"></script>
 </div>
 
 <div class="container-nav" id="transport">
