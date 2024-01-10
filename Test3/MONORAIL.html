@@ -94,7 +94,60 @@
             </div>
         </div>
     </div>
+    <div class="container-nav" id="transport">
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#train">Train</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#bus">Bus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#service">Service</a>
+            </li>
+        </ul>
 
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="train">
+                <ul class="transport-links">
+                    <li><a href="MRT.html"><h4>MRT</h4></a></li>
+                    <li><a href="LRT.html"><h4>LRT</h4></a></li>
+                    <li><a href="KTM.html"><h4>KTM</h4></a></li>
+                    <li><a href="MONORAIL.html"><h4>MONORAIL</h4></a></li>
+                </ul>
+                <ul class="transport-links">
+                    <li><a href="tstatus.php"><h4>TRAIN STATUS</h4></a></li>
+                    <?php
+                    $mysql = mysqli_connect("localhost", "root", "");
+                    mysqli_select_db($mysql, 'websitedb');
+
+                    // Check connection
+                    if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    exit();
+                    }
+
+                    // SQL query to fetch train status data
+                    $sql = "SELECT * FROM train_status";
+                    $result = mysqli_query($mysql, $sql);
+                    ?>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="bus">
+                <ul class="transport-links">
+                    <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
+                    <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
+                    <li><a href="RAPIDKL_Bus.php"><h4>RAPIDKL BUS</h4></a></li>
+                    <li><a href="GOKL_BUS.php"><h4>GOKL BUS</h4></a></li>
+                    <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="service">
+                <h4>Service</h4>
+                <p>This is the content for the Latest News tab.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="Test3.js"></script>
 </body>

@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="background-color: darkslateblue; width:auto; height:50%;">
         <div class="featured-post">
             <h1>Title of a longer featured blog post</h1>
             <p class="lead">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
@@ -104,46 +104,47 @@
             </div>
         </div>
     </div>
-    <div class="status-container"><!--Train Status & Bus Status-->
-        <a href="tstatus.php"><h4>Train Status</h4></a>
-        <?php
-        $mysql = mysqli_connect("localhost", "root", "");
-        mysqli_select_db($mysql, 'websitedb');
-    
-        // Check connection
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
-        }
-    
-        // SQL query to fetch train status data
-        $sql = "SELECT * FROM train_status";
-        $result = mysqli_query($mysql, $sql);
-        ?>
-    </div>
+
     <div class="container-nav" id="transport">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#featured">Train</a>
+                <a class="nav-link active" data-toggle="pill" href="#train">Train</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#popular">Bus</a>
+                <a class="nav-link" data-toggle="pill" href="#bus">Bus</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+                <a class="nav-link" data-toggle="pill" href="#service">Service</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="featured">
+            <div class="tab-pane fade show active" id="train">
                 <ul class="transport-links">
-                    <li><a href="MRT.html">MRT</a></li>
-                    <li><a href="LRT.html">LRT</a></li>
-                    <li><a href="KTM.html">KTM</a></li>
-                    <li><a href="MONORAIL.html">MONORAIL</a></li>
+                    <li><a href="MRT.html"><h4>MRT</h4></a></li>
+                    <li><a href="LRT.html"><h4>LRT</h4></a></li>
+                    <li><a href="KTM.html"><h4>KTM</h4></a></li>
+                    <li><a href="MONORAIL.html"><h4>MONORAIL</h4></a></li>
+                </ul>
+                <ul class="transport-links">
+                    <li><a href="tstatus.php"><h4>TRAIN STATUS</h4></a></li>
+                    <?php
+                    $mysql = mysqli_connect("localhost", "root", "");
+                    mysqli_select_db($mysql, 'websitedb');
+
+                    // Check connection
+                    if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    exit();
+                    }
+
+                    // SQL query to fetch train status data
+                    $sql = "SELECT * FROM train_status";
+                    $result = mysqli_query($mysql, $sql);
+                    ?>
                 </ul>
             </div>
-            <div class="tab-pane fade" id="popular">
+            <div class="tab-pane fade" id="bus">
                 <ul class="transport-links">
                     <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
                     <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
@@ -152,8 +153,8 @@
                     <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>
                 </ul>
             </div>
-            <div class="tab-pane fade" id="latest">
-                <h4>Latest News</h4>
+            <div class="tab-pane fade" id="service">
+                <h4>Service</h4>
                 <p>This is the content for the Latest News tab.</p>
             </div>
         </div>

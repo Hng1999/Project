@@ -21,7 +21,7 @@
         <div class="header-nav">
             <a href="#" class="logo"><span>EXPRESS</span>TIME</a>
             <nav class="navbar">
-                <a href="#home">HOME</a>
+                <a href="Test3.html">HOME</a>
                 <a href="#home">LATEST NEWS</a>
                 <a href="#transport">BUS</a>
                 <a href="#transport">TRAIN</a>
@@ -92,6 +92,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train Status</title>
     <style>
+        .Train-Status{
+            align-content: center;
+            margin: 20px 40px;
+        }
         table {
             border-collapse: collapse;
             width: 100%;
@@ -107,7 +111,7 @@
     </style>
 </head>
 <body>
-
+    <div class="Train-Status">
     <h2>Train Status</h2>
     <table>
         <tr>
@@ -132,7 +136,7 @@
         }
         ?>
     </table>
-
+    </div>
 </body>
 </html>
 
