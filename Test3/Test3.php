@@ -45,8 +45,8 @@
                 <i class="fa-solid fa-xmark" id="form-close"></i>
                 <form action="login.php" method="POST">
                     <h3>Login</h3>
-                    <input type="email" class="box" placeholder="Enter your email" />
-                    <input type="password" class="box" placeholder="Enter your password" />
+                    <input type="text" name="email" class="box" placeholder="Enter your email" />
+                    <input type="text" name="password" class="box" placeholder="Enter your password" />
                     <input type="submit" class="submit-btn" value="Login now" />
                     <input type="checkbox" id="remember" /><span>Remember Me</span>
                     <p>Forget password?  <a href="#">Click here</a></p>
