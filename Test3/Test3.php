@@ -71,19 +71,15 @@
 
     <div class="container" style="background-color: darkslateblue; width:auto; height:50%;">
         <div class="featured-post">
-            <h1>Title of a longer featured blog post</h1>
-            <p class="lead">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead"><a href="#" class="read-more">Continue reading...</a></p>
+        <h1>WELCOME TO EXPRESSTIME</h1>
+            <p class="lead">Navigate Klang Valley with ease: Get bus / train timetable and other public transit related information here.</p>
         </div>
         <div class="row">
             <div class="col-md-6 g-col-8">
                 <div class="card">
                     <div class="card-body">
-                        <strong>World</strong>
-                        <h3>Service News</h3>
-                        <div class="date">Nov 12</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
+                        <h3>MY 50 Unlimited Pass</h3>
+                        <p>RM50 for 30 days of Unlimited Travel on all Rapid Penang and Rapid KL rail & bus services</p>
                     </div>
                     <!-- Image placeholder -->
                     <div class="image-placeholder"></div>
@@ -92,11 +88,8 @@
             <div class="col-md-6 g-col-8">
                 <div class="card">
                     <div class="card-body">
-                        <strong>Design</strong>
-                        <h3>Route Information</h3>
-                        <div class="date">Nov 11</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
+                        <h3>Concession Card</h3>
+                        <p>Fare discount of 50% on cash rate for every journey on Rapid KL Bus, BRT, LRT, Monorail and MRT services</p>
                     </div>
                     <!-- Image placeholder -->
                     <div class="image-placeholder"></div>
