@@ -111,7 +111,7 @@
                 <a class="nav-link active" data-toggle="pill" href="#train">Train</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#bus">Bus</a>
+                <a class="nav-link " data-toggle="pill" href="#bus">Bus</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="pill" href="#service">Service</a>

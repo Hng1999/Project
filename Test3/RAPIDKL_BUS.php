@@ -94,10 +94,10 @@
 <div class="container-nav" id="transport">
     <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#featured">Train</a>
+            <a class="nav-link" data-toggle="pill" href="#featured">Train</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#popular">Bus</a>
+            <a class="nav-link active" data-toggle="pill" href="#popular">Bus</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
