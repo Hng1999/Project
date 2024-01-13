@@ -82,6 +82,11 @@
     justify-content: center;
     background-image: linear-gradient(rgba(4,3,30,0.7),rgba(4,3,30,0.7)),url(Front_Malaysia_Img.jpg);
 }
+.login-form-container input[type="email"],
+.login-form-container input[type="password"] {
+    color: black;
+    }
+
 
     .login-form-container.active {
         visibility:visible;
@@ -232,4 +237,16 @@ span {
             color: #333; /* Change color on hover */
         }
 
-
+.train-status-container {
+    margin-right:1000px;
+    width: 170px;
+    height: 90px;
+    text-align:center;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+     perspective: 1000px;
+     background-color:bisque;
+    }
+h2{
+    text-align:center;
+    margin-right:170px;
+}
