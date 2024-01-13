@@ -287,3 +287,12 @@ tr:hover {
 .container h1 {
     margin-top: 20px; /* Adjust the value as needed */
 }
+.transport-links {
+    max-height: 400px; /* Set a maximum height for the container */
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }
+  .card img {
+      width: 100%; /* Set width to 100% to fill entire width of card */
+      height: 200px; /* Set height to a fixed value */
+      object-fit: cover; /* Scale the image to fit inside the container */
+    }
