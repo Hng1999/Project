@@ -168,7 +168,7 @@ span {
 }
 /* Add your custom styles here */
 .container {
-
+    /* Your container styles */
 }
 
 .featured-post {
@@ -237,11 +237,16 @@ span {
             color: #333; /* Change color on hover */
         }
 
-.status-container {
+.train-status-container {
     margin-right:1000px;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 90px;
+    text-align:center;
     box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
      perspective: 1000px;
-     background-color:aqua;
+     background-color:bisque;
     }
+h2{
+    text-align:center;
+    margin-right:170px;
+}

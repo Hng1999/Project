@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <div class="container" style="background-color: darkslateblue; width:auto; height:50%;">
+    <div class="container">
         <div class="featured-post">
             <h1>Title of a longer featured blog post</h1>
             <p class="lead">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
@@ -104,47 +104,87 @@
             </div>
         </div>
     </div>
+    <div class="tstatus-container"><!--Train Status & Bus Status-->
+            <?php
+    $mysql = mysqli_connect("localhost", "root", "");
+    mysqli_select_db($mysql, 'websitedb');
 
+    // Check connection
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit();
+    }
+
+    // SQL query to fetch train status data
+    $sql = "SELECT * FROM train_status";
+    $result = mysqli_query($mysql, $sql);
+?>
+</div>
+    <h2>Train Status</h2>
+            <style>
+        table {
+            border-collapse: collapse;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            tr:hover {background-color: cyan;}
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <table>     
+        <tr>
+            <th>Train ID</th>
+            <th>Train Name</th>
+            <th>Frequency</th>
+            <th>Status</th>
+        </tr>
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                        <td>{$row['train_id']}</td>
+                        <td>{$row['train_name']}</td>
+                        <td>{$row['frequency']}</td>
+                        <td>{$row['status']}</td>
+                      </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No train data available</td></tr>";
+        }
+        ?>
+    </table>
+            </div>
     <div class="container-nav" id="transport">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#train">Train</a>
+                <a class="nav-link active" data-toggle="pill" href="#featured">Train</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#bus">Bus</a>
+                <a class="nav-link" data-toggle="pill" href="#popular">Bus</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#service">Service</a>
+                <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="train">
+            <div class="tab-pane fade show active" id="featured">
                 <ul class="transport-links">
-                    <li><a href="MRT.html"><h4>MRT</h4></a></li>
-                    <li><a href="LRT.html"><h4>LRT</h4></a></li>
-                    <li><a href="KTM.html"><h4>KTM</h4></a></li>
-                    <li><a href="MONORAIL.html"><h4>MONORAIL</h4></a></li>
-                </ul>
-                <ul class="transport-links">
-                    <li><a href="tstatus.php"><h4>TRAIN STATUS</h4></a></li>
-                    <?php
-                    $mysql = mysqli_connect("localhost", "root", "");
-                    mysqli_select_db($mysql, 'websitedb');
-
-                    // Check connection
-                    if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    exit();
-                    }
-
-                    // SQL query to fetch train status data
-                    $sql = "SELECT * FROM train_status";
-                    $result = mysqli_query($mysql, $sql);
-                    ?>
+                    <li><a href="MRT.html">MRT</a></li>
+                    <li><a href="LRT.html">LRT</a></li>
+                    <li><a href="KTM.html">KTM</a></li>
+                    <li><a href="MONORAIL.html">MONORAIL</a></li>
                 </ul>
             </div>
-            <div class="tab-pane fade" id="bus">
+            <div class="tab-pane fade" id="popular">
                 <ul class="transport-links">
                     <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
                     <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
@@ -153,8 +193,8 @@
                     <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>
                 </ul>
             </div>
-            <div class="tab-pane fade" id="service">
-                <h4>Service</h4>
+            <div class="tab-pane fade" id="latest">
+                <h4>Latest News</h4>
                 <p>This is the content for the Latest News tab.</p>
             </div>
         </div>

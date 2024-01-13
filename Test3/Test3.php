@@ -104,23 +104,64 @@
             </div>
         </div>
     </div>
-    <div class="status-container"><!--Train Status & Bus Status-->
-        <a href="tstatus.php"><h4>Train Status</h4></a>
-        <?php
-        $mysql = mysqli_connect("localhost", "root", "");
-        mysqli_select_db($mysql, 'websitedb');
-    
-        // Check connection
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
+    <div class="tstatus-container"><!--Train Status & Bus Status-->
+            <?php
+    $mysql = mysqli_connect("localhost", "root", "");
+    mysqli_select_db($mysql, 'websitedb');
+
+    // Check connection
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit();
+    }
+
+    // SQL query to fetch train status data
+    $sql = "SELECT * FROM train_status";
+    $result = mysqli_query($mysql, $sql);
+?>
+</div>
+    <h2>Train Status</h2>
+            <style>
+        table {
+            border-collapse: collapse;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            tr:hover {background-color: cyan;}
         }
-    
-        // SQL query to fetch train status data
-        $sql = "SELECT * FROM train_status";
-        $result = mysqli_query($mysql, $sql);
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <table>     
+        <tr>
+            <th>Train ID</th>
+            <th>Train Name</th>
+            <th>Frequency</th>
+            <th>Status</th>
+        </tr>
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                        <td>{$row['train_id']}</td>
+                        <td>{$row['train_name']}</td>
+                        <td>{$row['frequency']}</td>
+                        <td>{$row['status']}</td>
+                      </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No train data available</td></tr>";
+        }
         ?>
-    </div>
+    </table>
+            </div>
     <div class="container-nav" id="transport">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
