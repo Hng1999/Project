@@ -244,3 +244,13 @@ span {
      perspective: 1000px;
      background-color:aqua;
     }
+    h2{
+        text-align:center;
+        margin-right:170px;
+    }
+.complain-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}  

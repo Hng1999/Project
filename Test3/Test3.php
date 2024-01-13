@@ -69,14 +69,14 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="background-color: darkslateblue; width:auto; height:50%;">
         <div class="featured-post">
             <h1>Title of a longer featured blog post</h1>
             <p class="lead">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
             <p class="lead"><a href="#" class="read-more">Continue reading...</a></p>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 g-col-8">
                 <div class="card">
                     <div class="card-body">
                         <strong>World</strong>
@@ -89,7 +89,7 @@
                     <div class="image-placeholder"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 g-col-8">
                 <div class="card">
                     <div class="card-body">
                         <strong>Design</strong>
@@ -104,46 +104,116 @@
             </div>
         </div>
     </div>
-    <div class="status-container"><!--Train Status & Bus Status-->
-        <a href="tstatus.php"><h4>Train Status</h4></a>
-        <?php
-        $mysql = mysqli_connect("localhost", "root", "");
-        mysqli_select_db($mysql, 'websitedb');
-    
-        // Check connection
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
-        }
-    
-        // SQL query to fetch train status data
-        $sql = "SELECT * FROM train_status";
-        $result = mysqli_query($mysql, $sql);
-        ?>
-    </div>
-    <div class="container-nav" id="transport">
+
+    <div class="container-nav row-gap-3" id="transport">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#featured">Train</a>
+                <a class="nav-link active" data-toggle="pill" href="#train">Train</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#popular">Bus</a>
+                <a class="nav-link" data-toggle="pill" href="#bus">Bus</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+                <a class="nav-link" data-toggle="pill" href="#service">Service</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="featured">
+            <div class="tab-pane fade show active" id="train">
                 <ul class="transport-links">
-                    <li><a href="MRT.html">MRT</a></li>
-                    <li><a href="LRT.html">LRT</a></li>
-                    <li><a href="KTM.html">KTM</a></li>
-                    <li><a href="MONORAIL.html">MONORAIL</a></li>
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="MRT.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MRT.html" class="btn btn-primary"><h4>MRT</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="LRT.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="LRT.html" class="btn btn-primary"><h4>LRT</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="KTM.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="KTM.html" class="btn btn-primary"><h4>KTM</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="Monorail.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MONORAIL.html" class="btn btn-primary"><h4>MONORAIL</h4></a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
+                <ul class="transport-links">
+                <div class="tstatus-container"><!--Train Status & Bus Status-->
+            <?php
+    $mysql = mysqli_connect("localhost", "root", "");
+    mysqli_select_db($mysql, 'websitedb');
+
+    // Check connection
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit();
+    }
+
+    // SQL query to fetch train status data
+    $sql = "SELECT * FROM train_status";
+    $result = mysqli_query($mysql, $sql);
+?>
+</div>
+    <h2>Train Status</h2><br>
+            <style>
+        table {
+            border-collapse: collapse;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            tr:hover {background-color: cyan;}
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <table>     
+        <tr>
+            <th>Train ID</th>
+            <th>Train Name</th>
+            <th>Frequency</th>
+            <th>Status</th>
+        </tr>
+        <?php
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                        <td>{$row['train_id']}</td>
+                        <td>{$row['train_name']}</td>
+                        <td>{$row['frequency']}</td>
+                        <td>{$row['status']}</td>
+                      </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No train data available</td></tr>";
+        }
+        ?>
+    </table>
             </div>
-            <div class="tab-pane fade" id="popular">
+            <div class="tab-pane fade" id="bus">
                 <ul class="transport-links">
                     <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
                     <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
@@ -152,13 +222,18 @@
                     <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>
                 </ul>
             </div>
-            <div class="tab-pane fade" id="latest">
-                <h4>Latest News</h4>
+            <div class="tab-pane fade" id="service">
+                <h4>Service</h4>
                 <p>This is the content for the Latest News tab.</p>
             </div>
         </div>
     </div>
     <!--Complain And Suggestion-->
+    <div class="complain-form-container">
+    <iframe id="" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://my.forms.app/form/65a21fab01a50f722f87aff9" frameborder="0" style="width: 100vw; min-width:100%; height:600px; border:none;"></iframe>
+        <div formsappId="65a21fab01a50f722f87aff9"></div>
+<script src="https://forms.app/static/embed.js" type="text/javascript" async defer onload="new formsapp('65a21fab01a50f722f87aff9', 'standard', {'width':'100vw','height':'600px'});"></script>
+    </div>
     <script src="Test3.js"></script>
 </body>
 </html>
