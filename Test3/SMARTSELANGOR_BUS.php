@@ -142,12 +142,47 @@
                 </ul>
         </div>
         <div class="tab-pane fade show active" id="popular">
-        <ul class="transport-links">
-                    <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
-                    <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
-                    <li><a href="RAPIDKL_Bus.php"><h4>RAPIDKL BUS</h4></a></li>
-                    <li><a href="GOKL_BUS.php"><h4>GOKL BUS</h4></a></li>
-                    <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>
+                        <ul class="transport-links">
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="MRT bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MRTK_Bus.php" class="btn btn-primary"><h4>MRT KAJANG FEEDER BUS</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="MRT bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MRTP_Bus.php" class="btn btn-primary"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="RapidKL bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="RAPIDKL_Bus.php" class="btn btn-primary"><h4>RAPIDKL BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
+                    <li>
+                         <div class="card text-center" style="width: 14rem;">
+                            <img src="GoKL bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="GOKL_BUS.php" class="btn btn-primary"><h4>GOKL BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
+                    <li>
+                         <div class="card text-center" style="width: 14rem;">
+                            <img src="Smart Selangor bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="SMARTSELANGOR_Bus.php" class="btn btn-primary"><h4>SMART SELANGOR BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
                 </ul>
         </div>
         <div class="tab-pane fade" id="latest">
