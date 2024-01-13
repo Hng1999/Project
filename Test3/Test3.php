@@ -45,8 +45,8 @@
                 <i class="fa-solid fa-xmark" id="form-close"></i>
                 <form action="login.php" method="POST">
                     <h3>Login</h3>
-                    <input type="text" name="email" class="box" placeholder="Enter your email" />
-                    <input type="text" name="password" class="box" placeholder="Enter your password" />
+                    <input type="email" class="box" placeholder="Enter your email" />
+                    <input type="password" class="box" placeholder="Enter your password" />
                     <input type="submit" class="submit-btn" value="Login now" />
                     <input type="checkbox" id="remember" /><span>Remember Me</span>
                     <p>Forget password?  <a href="#">Click here</a></p>
@@ -104,64 +104,23 @@
             </div>
         </div>
     </div>
-    <div class="tstatus-container"><!--Train Status & Bus Status-->
-            <?php
-    $mysql = mysqli_connect("localhost", "root", "");
-    mysqli_select_db($mysql, 'websitedb');
-
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        exit();
-    }
-
-    // SQL query to fetch train status data
-    $sql = "SELECT * FROM train_status";
-    $result = mysqli_query($mysql, $sql);
-?>
-</div>
-    <h2>Train Status</h2>
-            <style>
-        table {
-            border-collapse: collapse;
-            width: 75%;
-            margin-left: auto;
-            margin-right: auto;
-            tr:hover {background-color: cyan;}
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-    <table>     
-        <tr>
-            <th>Train ID</th>
-            <th>Train Name</th>
-            <th>Frequency</th>
-            <th>Status</th>
-        </tr>
+    <div class="status-container"><!--Train Status & Bus Status-->
+        <a href="tstatus.php"><h4>Train Status</h4></a>
         <?php
-        if ($result->num_rows > 0) {
-            // Output data of each row
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>
-                        <td>{$row['train_id']}</td>
-                        <td>{$row['train_name']}</td>
-                        <td>{$row['frequency']}</td>
-                        <td>{$row['status']}</td>
-                      </tr>";
-            }
-        } else {
-            echo "<tr><td colspan='4'>No train data available</td></tr>";
+        $mysql = mysqli_connect("localhost", "root", "");
+        mysqli_select_db($mysql, 'websitedb');
+    
+        // Check connection
+        if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            exit();
         }
+    
+        // SQL query to fetch train status data
+        $sql = "SELECT * FROM train_status";
+        $result = mysqli_query($mysql, $sql);
         ?>
-    </table>
-            </div>
+    </div>
     <div class="container-nav" id="transport">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">

@@ -105,15 +105,43 @@
     </ul>
 
     <div class="tab-content">
-        <div class="tab-pane fade show active" id="featured">
-            <ul class="transport-links">
-                <li><a href="MRT.html">MRT</a></li>
-                <li><a href="LRT.html">LRT</a></li>
-                <li><a href="KTM.html">KTM</a></li>
-                <li><a href="MONORAIL.html">MONORAIL</a></li>
-            </ul>
+        <div class="tab-pane fade" id="featured">
+                            <ul class="transport-links">
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="MRT.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MRT.html" class="btn btn-primary"><h4>MRT</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="LRT.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="LRT.html" class="btn btn-primary"><h4>LRT</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="KTM.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="KTM.html" class="btn btn-primary"><h4>KTM</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="Monorail.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MONORAIL.html" class="btn btn-primary"><h4>MONORAIL</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
         </div>
-        <div class="tab-pane fade" id="popular">
+        <div class="tab-pane fade show active" id="popular">
         <ul class="transport-links">
                     <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
                     <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
