@@ -21,7 +21,7 @@
         <div class="header-nav">
             <a href="#" class="logo"><span>EXPRESS</span>TIME</a>
             <nav class="navbar">
-                <a href="Test3.html">HOME</a>
+                <a href="Test3.php">HOME</a>
                 <a href="#home">LATEST NEWS</a>
                 <a href="#transport">BUS</a>
                 <a href="#transport">TRAIN</a>
@@ -69,34 +69,27 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="background-color: darkslateblue; width:auto; height:50%;">
         <div class="featured-post">
-            <h1>Title of a longer featured blog post</h1>
-            <p class="lead">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead"><a href="#" class="read-more">Continue reading...</a></p>
+        <h1>WELCOME TO EXPRESSTIME</h1>
+            <p class="lead">Navigate Klang Valley with ease: Get bus / train timetable and other public transit related information here.</p>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 g-col-8">
                 <div class="card">
                     <div class="card-body">
-                        <strong>World</strong>
-                        <h3>Service News</h3>
-                        <div class="date">Nov 12</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
+                        <h3>MY 50 Unlimited Pass</h3>
+                        <p>RM50 for 30 days of Unlimited Travel on all Rapid Penang and Rapid KL rail & bus services</p>
                     </div>
                     <!-- Image placeholder -->
                     <div class="image-placeholder"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 g-col-8">
                 <div class="card">
                     <div class="card-body">
-                        <strong>Design</strong>
-                        <h3>Route Information</h3>
-                        <div class="date">Nov 11</div>
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="icon-link">Continue reading <span class="icon">&rarr;</span></a>
+                        <h3>Concession Card</h3>
+                        <p>Fare discount of 50% on cash rate for every journey on Rapid KL Bus, BRT, LRT, Monorail and MRT services</p>
                     </div>
                     <!-- Image placeholder -->
                     <div class="image-placeholder"></div>
@@ -104,7 +97,58 @@
             </div>
         </div>
     </div>
-    <div class="tstatus-container"><!--Train Status & Bus Status-->
+
+    <div class="container-nav row-gap-3" id="transport">
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#train">Train</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " data-toggle="pill" href="#bus">Bus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#service">Service</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="train">
+                <ul class="transport-links">
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="MRT.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MRT.html" class="btn btn-primary"><h4>MRT</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="LRT.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="LRT.html" class="btn btn-primary"><h4>LRT</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="KTM.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="KTM.html" class="btn btn-primary"><h4>KTM</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="Monorail.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MONORAIL.html" class="btn btn-primary"><h4>MONORAIL</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="transport-links">
+                <div class="tstatus-container"><!--Train Status & Bus Status-->
             <?php
     $mysql = mysqli_connect("localhost", "root", "");
     mysqli_select_db($mysql, 'websitedb');
@@ -120,7 +164,7 @@
     $result = mysqli_query($mysql, $sql);
 ?>
 </div>
-    <h2>Train Status</h2>
+    <h2>Train Status</h2><br>
             <style>
         table {
             border-collapse: collapse;
@@ -162,44 +206,62 @@
         ?>
     </table>
             </div>
-    <div class="container-nav" id="transport">
-        <ul class="nav nav-pills nav-justified">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#featured">Train</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#popular">Bus</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
-            </li>
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane fade show active" id="featured">
+            <div class="tab-pane fade" id="bus">
                 <ul class="transport-links">
-                    <li><a href="MRT.html">MRT</a></li>
-                    <li><a href="LRT.html">LRT</a></li>
-                    <li><a href="KTM.html">KTM</a></li>
-                    <li><a href="MONORAIL.html">MONORAIL</a></li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="MRT bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MRTK_Bus.php" class="btn btn-primary"><h4>MRT KAJANG FEEDER BUS</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="MRT bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="MRTP_Bus.php" class="btn btn-primary"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
+                    <li>
+                        <div class="card text-center" style="width: 14rem;">
+                            <img src="RapidKL bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="RAPIDKL_Bus.php" class="btn btn-primary"><h4>RAPIDKL BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
+                    <li>
+                         <div class="card text-center" style="width: 14rem;">
+                            <img src="GoKL bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="GOKL_BUS.php" class="btn btn-primary"><h4>GOKL BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
+                    <li>
+                         <div class="card text-center" style="width: 14rem;">
+                            <img src="Smart Selangor bus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a href="SMARTSELANGOR_Bus.php" class="btn btn-primary"><h4>SMART SELANGOR BUS</h4></a>
+                        </div>
+                     </div>
+                    </li>
                 </ul>
             </div>
-            <div class="tab-pane fade" id="popular">
-                <ul class="transport-links">
-                    <li><a href="MRTK_Bus.php"><h4>MRT KAJANG FEEDER BUS</h4></a></li>
-                    <li><a href="MRTP_Bus.php"><h4>MRT PUTRAJAYA FEEDER BUS</h4></a></li>
-                    <li><a href="RAPIDKL_Bus.php"><h4>RAPIDKL BUS</h4></a></li>
-                    <li><a href="GOKL_BUS.php"><h4>GOKL BUS</h4></a></li>
-                    <li><a href="SMARTSELANGOR_Bus.php"><h4>SMART SELANGOR BUS</h4></a></li>
-                </ul>
-            </div>
-            <div class="tab-pane fade" id="latest">
-                <h4>Latest News</h4>
+            <div class="tab-pane fade" id="service">
+                <h4>Service</h4>
                 <p>This is the content for the Latest News tab.</p>
             </div>
         </div>
     </div>
     <!--Complain And Suggestion-->
+    <div class="complain-form-container">
+    <iframe id="" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://my.forms.app/form/65a21fab01a50f722f87aff9" frameborder="0" style="width: 100vw; min-width:100%; height:600px; border:none;"></iframe>
+        <div formsappId="65a21fab01a50f722f87aff9"></div>
+<script src="https://forms.app/static/embed.js" type="text/javascript" async defer onload="new formsapp('65a21fab01a50f722f87aff9', 'standard', {'width':'100vw','height':'600px'});"></script>
+    </div>
     <script src="Test3.js"></script>
 </body>
 </html>
